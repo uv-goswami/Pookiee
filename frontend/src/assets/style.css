@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', cursive, sans-serif; /* Primary font */
+    transition: background-image 0.5s ease, background-color 0.5s ease; /* Smooth transition for background changes */
+    background-size: cover; /* Ensures the background image covers the whole screen */
+    background-position: center; /* Centers the background image */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-repeat: no-repeat; /* Prevents image tiling */
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Flexbox for content centering */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Container */
+.container {
+    text-align: center; /* Center text alignment */
+    color: #fff; /* Light text for readability */
+    padding: 20px; /* Internal padding */
+    width: 90%; /* Responsive container width */
+    max-width: 600px; /* Max width for larger screens */
+    border-radius: 20px; /* Smooth rounded corners */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    background: rgba(255, 241, 235, 0.9); /* Transparent effect with gradient */
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+    border: 3px solid #ff9a9e; /* Soft pink border for aesthetics */
+    position: absolute; /* Ensures positioning relative to the viewport */
+    top: 50%; /* Aligns vertically to the center */
+    left: 50%; /* Aligns horizontally to the center */
+    transform: translate(-50%, -50%); /* Adjusts position back to true center */
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2rem; /* Adjust heading size for mobile */
+    margin-bottom: 15px; /* Space below the heading */
+    color: #ff6f91; /* Vibrant pink shade */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Paragraph Styles */
+p {
+    font-size: 1rem; /* Smaller font size for mobile readability */
+    margin: 8px 0; /* Space between paragraphs */
+    color: #ff7eb3; /* Soft magenta text */
+    font-family: 'Amita', cursive; /* Elegant secondary font */
+}
+
+/* Input Field Styles */
+input[type="text"] {
+    padding: 10px; /* Padding inside the input fields */
+    border: 2px solid #ff9a9e; /* Pink border */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Font size for input text */
+    width: 90%; /* Responsive width for mobile */
+    margin: 8px auto; /* Center the input box */
+    display: block; /* Block-level input for centering */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle input shadow */
+}
+
+/* Color Input Styles (Combined Text and Picker) */
+.color-input-container {
+    display: flex;
+    justify-content: center; /* Centers the color input within the container */
+    align-items: center;
+    margin: 10px auto; /* Space around the color input */
+    width: 90%; /* Combined width of text box and picker */
+}
+
+input[type="color"] {
+    width: 40px;
+    height: 40px;
+    cursor: pointer; /* Pointer cursor for color picker */
+    margin-left: 8px; /* Space between text input and color picker */
+}
+
+/* Button Styles */
+button {
+    margin-top: 15px; /* Space above buttons */
+    padding: 10px 20px; /* Button padding */
+    font-size: 1rem; /* Font size for text in the button */
+    font-weight: bold; /* Bold text */
+    color: #fff; /* White text color */
+    background-color: #ff6f91; /* Vibrant pink background */
+    border: none; /* Remove default button border */
+    border-radius: 20px; /* Smoothly rounded edges */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+}
+
+button:hover {
+    background-color: #ff4d6d; /* Deeper pink on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Unordered List (Summary) */
+ul {
+    list-style-type: none; /* No default bullet points */
+    padding: 0; /* Remove padding */
+    margin: 0;
+}
+
+li {
+    font-size: 1rem; /* Font size for list items */
+    margin: 8px 0; /* Space between list items */
+    color: #ff6f91; /* Pink color for text */
+}
+
+/* Subtle Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start transparent */
+        transform: translateY(-20px); /* Slight upward motion */
+    }
+    to {
+        opacity: 1; /* Fully opaque */
+        transform: translateY(0); /* Settles in place */
+    }
+}
+
+.reveal-message {
+    animation: fadeIn 1s ease-in-out; /* Animation effect */
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        height: 100vh; /* Ensure full viewport height for proper centering */
+    }
+
+    .container {
+        /* Remove absolute/fixed positioning so body flex centering works on mobile */
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 95%; /* Slightly adjusted width */
+        padding: 15px; /* Reduced padding for mobile */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Smaller font size for heading */
+    }
+
+    p {
+        font-size: 0.9rem; /* Smaller paragraph text */
+    }
+
+    input[type="text"] {
+        font-size: 0.9rem; /* Smaller input font size */
+        width: 95%; /* Adjusted input width for mobile */
+    }
+
+    button {
+        padding: 8px 15px; /* Adjusted button padding for mobile */
+        font-size: 0.9rem; /* Smaller button text */
+    }
+}
