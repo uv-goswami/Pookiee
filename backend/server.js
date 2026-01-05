@@ -8,7 +8,8 @@ const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
   process.env.CLIENT_URL,
-  'http:
+  'http://localhost:5173',
+  'https://frontend-14mw.onrender.com'
 ];
 
 app.use(cors({
@@ -26,11 +27,11 @@ app.use(cors({
 app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ limit: '100mb', extended: true }));
 
+const isLocalConnection = process.env.DATABASE_URL && process.env.DATABASE_URL.includes('localhost');
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false
-  }
+  ssl: isLocalConnection ? false : { rejectUnauthorized: false }
 });
 
 const initDb = async () => {

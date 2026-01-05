@@ -4,7 +4,7 @@ import QuestionContainer from './components/QuestionContainer';
 import backgroundImages, { dpImage } from './backgroundImages';
 import useQuestions from './hooks/useQuestions';
 
-const API_URL = (import.meta.env.VITE_API_BASE_URL || "http:
+const API_URL = (import.meta.env.VITE_API_BASE_URL || "http://localhost:5000") + "/api/deliver";
 
 const TypingEffect = ({ text }) => {
   const [displayText, setDisplayText] = useState('');
